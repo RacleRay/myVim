@@ -42,6 +42,7 @@ requirement: pip python (3+) gcc g++
 
 - `sp` file 新建水平窗口
 - `vs` file 新建垂直窗口
+- `:tabnew` file 新建标签页，`shift`+ :arrow_left:前一个标签，`shift`+:arrow_right:后一个标签
 - `ctrl w` 切换窗口
 - `F2` 去空行
 - `F5` 编译运行
