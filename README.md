@@ -1,8 +1,10 @@
 ## Installation
 
-1. bash install_zsh.sh (Optional)
-2. bash zsh_pack_install.sh  (Optional)
-3. bash install_vim.sh
+requirement: pip python (3+) gcc g++
+
+1. `bash install_zsh.sh` (Optional)
+2. `bash zsh_pack_install.sh`  (Optional)
+3. `bash install_vim.sh`
 
 
 
@@ -12,15 +14,17 @@
 
 - 需要 vim 8.2+，配置中会自动安装更新
 - Unbuntu系统
-- pip 需要自行安装，一般执行：`sudo apt install python3-pip`，就行了，gcc g++ 会自动安装。有自定义需要，自行安装其他编译器。
+- pip 可能需要自行安装，一般执行：`sudo apt install python3-pip`，就行了，gcc g++ 会自动安装。有自定义需要，自行安装其他编译器。
 
 ### 自动添加文件信息
 
-<img src="images/README_pic/image-20220227165837324.png" alt="image-20220227165837324" style="zoom:50%;" />
+<img src="images/README_pic/image-20220227165837324.png" alt="image-20220227165837324" style="zoom:40%;" />
+
+<img src="images/README_pic/image-20220227175249834.png" alt="image-20220227175249834" style="zoom:35%;" />
 
 ### 文件树集成
 
-<img src="images/README_pic/image-20220227170055273.png" alt="image-20220227170055273" style="zoom:50%;" />
+<img src="images/README_pic/image-20220227170055273.png" alt="image-20220227170055273" style="zoom:45%;" />
 
 快捷键 -- F3
 
