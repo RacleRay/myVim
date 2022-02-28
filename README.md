@@ -67,6 +67,8 @@ requirement: pip python (3+) gcc g++
   "  `gr `跳转到引用
 - `\cc` 快捷注释；`\cu` 取消注释。和使用 visual mode 比，就方便了一点。
 
+- Ctags支持，ctags创建tags，`Ctrl + ]` 跳转到定义处，`Ctrl + T` 退回至跳转前。`tl` 打开 tag list。
+
 其他Vim快捷键一起使用，会很像VSCode。
 
 - `za` 代码折叠，展开
