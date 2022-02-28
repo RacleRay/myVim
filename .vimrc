@@ -1,7 +1,16 @@
 "===========================================================
 "Normal Config
 "===========================================================
-"let mapleader="\"
+set lbr
+set fo+=mB
+set sm
+set mousemodel=popup
+
+set list
+set listchars=tab:>\ ,trail:·
+set redrawtime=10000
+"set updatetime=300
+"let mapleader=","
 
 " 显示中文帮助
 if version >= 603
@@ -14,9 +23,7 @@ set cul "高亮光标所在行
 set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
 set go=             " 不要图形按钮  
-"color desert     " 设置背景主题  
-color ron     " 设置背景主题  
-"color torte     " 设置背景主题  
+
 
 "set guifont=Courier_New:h10:cANSI   " 设置字体  
 "autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
@@ -29,17 +36,6 @@ set showcmd         " 输入的命令显示出来，看的清楚些
 
 set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
 set sidescrolloff=8
-
-set lbr
-set fo+=mB
-set sm
-set mousemodel=popup
-
-set list
-" tab前显示 > 图标
-set listchars=tab:>\ ,trail:·
-set redrawtime=10000
-"set updatetime=300
 
 "set foldenable      " 允许折叠  
 "set foldmethod=manual   " 手动折叠  
@@ -175,8 +171,8 @@ au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
 au BufRead,BufNewFile *.{go}   set filetype=go
 au BufRead,BufNewFile *.{js}   set filetype=javascript
 "rkdown to HTML  
-nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
-nmap fi :!firefox %.html & <CR><CR>
+"nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
+"nmap fi :!firefox %.html & <CR><CR>
 
 
 if has("autocmd")
@@ -393,21 +389,21 @@ endfunc
 
 
 "自动补全括号
-":inoremap ( ()<ESC>i
-":inoremap ) <c-r>=ClosePair(')')<CR>
-":inoremap { {<CR>}<ESC>O
-":inoremap } <c-r>=ClosePair('}')<CR>
-":inoremap [ []<ESC>i
-":inoremap ] <c-r>=ClosePair(']')<CR>
-":inoremap " ""<ESC>i
-":inoremap ' ''<ESC>i
-"function! ClosePair(char)
-"    if getline('.')[col('.') - 1] == a:char
-"        return "\<Right>"
-"    else
-"        return a:char
-"    endif
-"endfunction
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+:inoremap { {<CR>}<ESC>O
+:inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
 
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
@@ -516,7 +512,7 @@ Bundle 'https://gitee.com/suyelu/The-NERD-Commenter'
 "" auto add packages
 Bundle 'https://gitee.com/suyelu/python-imports.vim'  
 "https://github.com/nvie/vim-flake8
-Bundle 'nvie/vim-flake8'
+"Bundle 'nvie/vim-flake8'  
 "Bundle 'Python-mode-klen'
 "Bundle 'https://gitee.com/suyelu/django_templates.vim'
 "Bundle 'https://gitee.com/suyelu/Django-Projects'
@@ -524,8 +520,15 @@ Bundle 'nvie/vim-flake8'
 "Bundle 'https://gitee.com/suyelu/SQLComplete.vim'
 
 "Visual
-Bundle 'itchyny/lightline.vim'
+Bundle 'https://gitee.com/racleray/lightline.vim'
 Bundle 'luochen1990/rainbow'
+Bundle 'https://gitee.com/zgpio/onedark.vim'
+Bundle 'https://gitee.com/racleray/dracula', { 'name': 'dracula' }
+Bundle 'https://gitee.com/racleray/ayuclone'
+Bundle 'https://gitee.com/racleray/everblush'
+Bundle 'https://gitee.com/racleray/papercolor'
+Bundle 'https://gitee.com/racleray/vim-one'
+
 
 "Code hint and more like VSCode
 Bundle 'neoclide/coc.nvim', {'branch': 'release'}
@@ -538,8 +541,88 @@ Bundle 'fatih/vim-go'
 
 " Optional, syntax highlight
 "Bundle 'sheerun/vim-polyglot'   
-" When GUI enabed, not for Server
+"" When GUI enabed, not for Server
 "Bundle 'voldikss/vim-floaterm'  
+
+
+"call vundle#end()
+
+
+
+"=========================================================
+"" colorscheme settings
+"color ron
+
+"color slate
+
+"color autumn2
+
+" https://github.com/joshdick/onedark.vim
+" 可能需要手动配置onedark.vim文件，见文档
+"color onedark
+
+"color dracula
+
+" ayu
+"set termguicolors
+"let ayucolor="light"
+"let ayucolor="mirage"
+"let ayucolor="dark"
+"color ayu
+
+
+" everblush
+"" To enable
+"let g:everblushNR=1 " default
+"" To disable
+"let g:everblushNR=1
+"" Remember to reload colorscheme after changing the variable
+"color everblush
+
+
+" papercolor
+set t_Co=256   " This is may or may not needed.
+"set background=light
+set background=dark
+"let g:PaperColor_Theme_Options = {
+  "\   'theme': {
+  "\     'default': {
+  "\       'transparent_background': 1,
+  "\       'override' : {
+  "\         'color00' : ['#080808', '232'],
+  "\         'linenumber_bg' : ['#080808', '232']
+  "\       }
+  "\     }
+  "\   }
+  "\ }
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1,
+  \       'allow_bold': 1,
+  \       'allow_italic': 1
+  \     }
+  \   },
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     },
+  \     'cpp': {
+  \       'highlight_standard_library': 1
+  \     },
+  \     'c': {
+  \       'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
+colorscheme PaperColor
+
+
+" one
+"set background=dark " for the dark version
+"let g:one_allow_italics = 1
+"" set background=light " for the light version
+"colorscheme one
 
 
 
@@ -561,7 +644,7 @@ nmap fd :FufDir<CR>
 
 "=========================================================
 "" auto pairs : 和自定义的有冲突，选一个使用 
-let g:AutoPairsFlyMode = 1
+"let g:AutoPairsFlyMode = 1
 "let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 
@@ -622,7 +705,7 @@ endif
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
@@ -641,20 +724,6 @@ let g:rainbow_active = 1
 
 
 "=========================================================
-" Add mappings, unless the user didn't want this.
-" The default mapping is registered under to <F7> by default, unless the user
-" remapped it already (or a mapping exists already for <F7>)
-if !exists("no_plugin_maps") && !exists("no_flake8_maps")
-    if !hasmapto('Flake8(') && !hasmapto('flake8#Flake8(')
-        noremap <buffer> <F12> :call flake8#Flake8()<CR>
-    endif
-endif
-
-"let g:flake8_cmd="~/.local/bin/flake8"
-
-
-
-"=========================================================
 " ==== neoclide/coc.nvim ====
 " 需要先安装 nodejs  yarn  clangd，coc 文档中可查找插件
 " jedi-language-server 使用pip安装，若没有sudo，可能找不到文件，解决: https://www.guyrutenberg.com/2021/08/14/coc-nvim-unhandledrejection-launching-server-jedi-using-command-jedi-language-server-failed/
@@ -665,7 +734,7 @@ endif
 "  Shift + TAB 组合键为上一个补全候选项
 "  Ctrl + Enter 组合键为呼出候选菜单
 "  Enter 键为确定当前补全候选项（当有候选项被选中时）
-"  普通模式下 M 键会新开前窗口打开光标对应位置代码的说明文档
+"  普通模式下 K 键会新开前窗口打开光标对应位置代码的说明文档
    "\rn为 批量重命名 操作
 "  \f 为 格式化(format)选中代码 操作
 
