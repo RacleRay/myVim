@@ -68,6 +68,10 @@ requirement: pip python (3+) gcc g++
 - `\cc` 快捷注释；`\cu` 取消注释。和使用 visual mode 比，就方便了一点。
 
 - Ctags支持，ctags创建tags，`Ctrl + ]` 跳转到定义处，`Ctrl + T` 退回至跳转前。`tl` 打开 tag list。
+> ```sh
+> # 根据本机头文件路径添加以下文件，方便查询系统编程常用头文件
+> ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/systags /usr/include/* /usr/include/x86_64-linux-gnu/sys/* /usr/include/x86_64-linux-gnu/bits/*  /usr/include/arpa/*
+> ```
 
 其他Vim快捷键一起使用，会很像VSCode。
 
