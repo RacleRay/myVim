@@ -4,7 +4,8 @@ requirement: pip python (3+) gcc g++
 
 1. `bash install_zsh.sh` (Optional)
 2. `bash zsh_pack_install.sh`  (Optional)
-3. `bash install_vim.sh`
+3. `bash update_vim.sh`
+4. `bash install_vim.sh`
 
 
 
