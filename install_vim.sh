@@ -19,9 +19,9 @@ echo "开始安装Vim 8.2"
 if which apt-get >/dev/null; then
     sudo add-apt-repository ppa:jonathonf/vim
     sudo apt-get update
-	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git wget
+	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev python3-pip git wget
 elif which yum >/dev/null; then
-	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel wget	
+	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel python3-pip wget	
 fi
 
 ##Add HomeBrew support on  Mac OS
@@ -36,11 +36,12 @@ echo "完成安装Vim 8.2"
 # clone repository
 echo ""
 echo "开始加载文件"
-cd ~/
-git clone https://gitee.com/racleray/vim.git 2>/dev/null
+#cd ~/
+#git clone https://gitee.com/racleray/vim.git 2>/dev/null
 
 mv -f ~/.vim ~/.vim_old 2>&1 >/dev/null
-mv -f ~/vim ~/.vim 2>&1 >/dev/null
+mkdir ~/.vim
+cp -rf ./  ~/.vim 2>&1 >/dev/null
 mv -f ~/.vimrc ~/.vimrc_old 2>&1 >/dev/null
 mv -f ~/.vim/.vimrc ~/ 
 mv -f ~/.vim/.clang-format ~/ 
@@ -70,8 +71,9 @@ echo "安装完成"
 echo ""
 echo "安装环境工具"
 sudo apt install -y clang-format 
-sudo pip3 install jedi-language-server python-lsp-server[all] autopep8 flake8
+#sudo pip3 install jedi-language-server python-lsp-server[all] autopep8 flake8
 echo "安装完成，python配置需要在使用的python环境中安装对应的包"
+
 
 echo ""
 echo "安装nodejs"
@@ -81,8 +83,8 @@ sudo tar xf node-v16.14.0-linux-x64.tar.xz --directory=/usr/
 sudo mv /usr/node-v16.14.0-linux-x64/ /usr/nodejs/
 sudo rm -f /usr/bin/npm 2>/dev/null
 sudo rm -f /usr/bin/node 2>/dev/null
-sudo ln -s /usr/nodejs/bin/npm /usr/bin/
-sudo ln -s /usr/nodejs/bin/node /usr/bin/
+sudo ln -s /usr/nodejs/node-v16.14.0-linux-x64/bin/npm /usr/bin/
+sudo ln -s /usr/nodejs/node-v16.14.0-linux-x64/bin/node /usr/bin/
 rm node-v16.14.0-linux-x64.tar.xz
 echo "安装完成"
 
@@ -107,15 +109,15 @@ set tags+=~/.vim/systags
 EOF
 echo "配置完成"
 
-echo ""
-echo "配置pydocstring"
-sudo apt install -y python3-venv
-python3 -m venv ~/.config/coc/extensions/coc-pydocstring-data/doq/venv
-~/.config/coc/extensions/coc-pydocstring-data/doq/venv/bin/python -m pip install -U pip wheel
-~/.config/coc/extensions/coc-pydocstring-data/doq/venv/bin/python -m pip install -U doq==0.9.1
-echo "配置完成"
-echo "安装完成，python配置需要在使用的python环境中安装对应的包"
+#echo ""
+#echo "配置pydocstring"
+#sudo apt install -y python3-venv
+#python3 -m venv ~/.config/coc/extensions/coc-pydocstring-data/doq/venv
+#~/.config/coc/extensions/coc-pydocstring-data/doq/venv/bin/python -m pip install -U pip wheel
+#~/.config/coc/extensions/coc-pydocstring-data/doq/venv/bin/python -m pip install -U doq==0.9.1
+#echo "配置完成"
+#echo "安装完成，python配置需要在使用的python环境中安装对应的包"
 
 
-rm -rf ~/vim 2>&1 >/dev/null
+#rm -rf ~/vim 2>&1 >/dev/null
 rm -rf ~/.vim_old 2>&1 >/dev/null

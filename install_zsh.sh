@@ -238,8 +238,8 @@ main() {
 		CHSH=no
 	fi
 
-    sudo apt install -y zsh
-    sudo chsh -s /bin/zsh
+    	sudo apt install -y zsh
+    	sudo chsh -s /bin/zsh
 
 	# Parse arguments
 	while [ $# -gt 0 ]; do

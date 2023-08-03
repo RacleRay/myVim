@@ -6,8 +6,8 @@ set fo+=mB
 set sm
 set mousemodel=popup
 
-set list
-set listchars=tab:>\ ,trail:·
+"set list
+"set listchars=tab:>\ ,trail:·
 set redrawtime=10000
 "set updatetime=300
 "let mapleader=","
@@ -20,7 +20,7 @@ endif
 
 syntax on
 set cul "高亮光标所在行
-set cuc
+"set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
 set go=             " 不要图形按钮  
 
@@ -72,10 +72,6 @@ set history=1000
 "搜索逐字符高亮
 set hlsearch
 set incsearch
-
-"语言设置
-set langmenu=zh_CN.UTF-8
-set helplang=cn
 
 "编码设置
 set iskeyword+=.
@@ -558,7 +554,7 @@ Bundle 'neoclide/coc.nvim', {'branch': 'release'}
 
 " https://github.com/joshdick/onedark.vim
 " 可能需要手动配置onedark.vim文件，见文档
-"color onedark
+color onedark
 
 "color dracula
 
@@ -614,7 +610,7 @@ let g:PaperColor_Theme_Options = {
   \     }
   \   }
   \ }
-colorscheme PaperColor
+"colorscheme PaperColor
 
 
 " one
@@ -745,17 +741,11 @@ let g:rainbow_active = 1
 " coc extensions
 let g:coc_global_extensions = [
       \ 'coc-json',
-      \ 'coc-tsserver',
-      \ 'coc-css',
-      \ 'coc-html',
       \ 'coc-vimlsp',
       \ 'coc-clangd',
-      \ 'coc-highlight',
       \ 'coc-pyright',
       \ 'coc-pairs',
       \ 'coc-markdownlint',
-      \ 'coc-pydocstring',
-      \ 'coc-jedi'
       \ ]
 
 set signcolumn=yes
