@@ -321,9 +321,15 @@ map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
+        if !isdirectory('build')
+            execute "!mkdir build"
+        endif
         exec "!g++ % -o %<"
         exec "!time ./%<"
     elseif &filetype == 'cpp'
+        if !isdirectory('build')
+            execute "!mkdir build"
+        endif
         exec "!g++ % -o %<"
         exec "!time ./%<"
     elseif &filetype == 'java' 
