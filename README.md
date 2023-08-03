@@ -1,5 +1,7 @@
 ## Installation
 
+> For arch and ubuntu >= 20, use this repo `[archibate/vimrc](https://github.com/archibate/vimrc)` for better experience.
+
 requirement: pip python (3+) gcc g++
 
 1. `bash install_zsh.sh` (Optional)
