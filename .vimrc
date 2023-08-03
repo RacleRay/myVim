@@ -447,13 +447,12 @@ nmap tl :Tlist<cr>
 let g:pydiction_location = '~/.vim/after/complete-dict'
 let g:pydiction_menu_height = 20
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+" let g:miniBufExplMapWindowNavVim = 1
+" let g:miniBufExplMapWindowNavArrows = 1
+" let g:miniBufExplMapCTabSwitchBufs = 1
+" let g:miniBufExplModSelTarget = 1
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-
 
 
 
@@ -534,14 +533,14 @@ Bundle 'https://gitee.com/racleray/vim-one'
 Bundle 'neoclide/coc.nvim', {'branch': 'release'}
 
 "golang
-Bundle 'fatih/vim-go'
+"Bundle 'fatih/vim-go'
 
 "Rust
 "Bundle 'tpope/vim-rails.git'
 
 " Optional, syntax highlight
 "Bundle 'sheerun/vim-polyglot'   
-"" When GUI enabed, not for Server
+" When GUI enabed, not for Server
 "Bundle 'voldikss/vim-floaterm'  
 
 
@@ -621,7 +620,7 @@ colorscheme PaperColor
 " one
 "set background=dark " for the dark version
 "let g:one_allow_italics = 1
-"" set background=light " for the light version
+" set background=light " for the light version
 "colorscheme one
 
 
