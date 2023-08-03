@@ -358,7 +358,7 @@ endfunc
 
 
 "代码格式优化化  file 从多级父目录中查找 .clang-format 文件
-nmap <F6> :%!clang-format --style=file<CR>:w<CR>
+nmap <F6> :%!clang-format --style=file<CR>
 
 "环境中需要安装对应的工具，最好在sudo模式下安装，否则可能装在了local文件夹，全局查不到
 map <F7> :call FormartSrc()<CR><CR>
